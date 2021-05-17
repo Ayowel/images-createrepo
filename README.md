@@ -3,6 +3,18 @@
 Build a base image with RPM repository management capability through `createrepo_c`.
 Allows to use the latest updates to createrepo, most noticeably the module management capability not available yet in official RPMs (createrepo `>0.16.1`).
 
+## Usage
+
+After building an image from one of the available Dockerfile (see below for instructions and details), and assuming you tagged the resulting image `ayowel/createrepo`:
+
+```sh
+docker run --rm -v "$(pwd):/mnt" ayowel/createrepo createrepo .
+```
+
+Mount the target directory into /mnt in the container.
+
+Note that you may use `modifyrepo`, `mergerepo`, or `sqliterepo` in addition to `createrepo`.
+
 ## Build instructions
 
 * Move to this repository's folder
